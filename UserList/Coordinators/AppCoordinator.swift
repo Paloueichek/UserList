@@ -11,6 +11,8 @@ import UIKit
 
 final class AppCoordinator: BaseCoordinator {
     
+    let networking = NetworkManagerImp()
+    
     convenience init(withWindow window: UIWindow?, navigationController: UINavigationController) {
         guard let mainWindow = window else { fatalError("Application can't be initialized") }
         self.init(withNavigationController: navigationController)
@@ -19,5 +21,15 @@ final class AppCoordinator: BaseCoordinator {
     
     override func start(withCallback callback: CoordinatorCallback? = nil) {
         super.start(withCallback: callback)
+        let viewModel = MainUserListViewModel(networkManager: networking, appCoordinator: self)
+        let mainUserListViewController = MainUserListViewController(viewModel: viewModel)
+        rootController.setViewControllers([mainUserListViewController], animated: true)
+    }
+    
+    func openDetailScreen(with user: User) {
+       
+        let viewModel = DetailUserViewModel(networkManager: networking, appCoordinator: self, user: user)
+        let detailUserViewController = DetailUserViewController(viewModel: viewModel)
+        rootController.pushViewController(detailUserViewController, animated: true)
     }
 }

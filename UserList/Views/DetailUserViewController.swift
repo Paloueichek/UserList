@@ -1,19 +1,19 @@
 //
-//  MainUserListViewController.swift
+//  DetailUserViewController.swift
 //  UserList
 //
-//  Created by Patrick Aloueichek on 9/16/19.
+//  Created by Patrick Aloueichek on 9/17/19.
 //  Copyright © 2019 Patrick Aloueichek. All rights reserved.
 //
 
 import UIKit
 
-class MainUserListViewController: UIViewController {
+class DetailUserViewController: UIViewController {
     
     var tableView = UITableView()
-    var viewModel: MainUserListViewModel
+    var viewModel: DetailUserViewModel
     
-    init(viewModel: MainUserListViewModel) {
+    init(viewModel: DetailUserViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -21,12 +21,11 @@ class MainUserListViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) is not supported")
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavigationBar()
         setupTableView()
-        viewModel.getUsers()
+        viewModel.getPosts()
     }
     
     private func setupTableView() {
@@ -42,39 +41,33 @@ class MainUserListViewController: UIViewController {
         tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
-        tableView.register(MainUserTableViewCell.self, forCellReuseIdentifier: "cellId")
+        tableView.register(DetailUserTableViewCell.self, forCellReuseIdentifier: "detailCellId")
+        let headerView = HeaderUIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 400))
+        
+        tableView.tableHeaderView = headerView
+      
+        
     }
     
     private func setupNavigationBar() {
-        navigationController?.title = "Profiles"
-        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0, green: 0.9137254902, blue: 0.7019607843, alpha: 1)
+        navigationController?.navigationBar.barTintColor = .clear
     }
 }
 
-extension MainUserListViewController: UITableViewDataSource, UITableViewDelegate {
-    
+extension DetailUserViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.userArray?.count ?? 0
+        return viewModel.posts?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! MainUserTableViewCell
-       
-        cell.textLabel?.text = viewModel.userArray?[indexPath.row].name
-        cell.detailTextLabel?.text = viewModel.userArray?[indexPath.row].email
+        let cell = tableView.dequeueReusableCell(withIdentifier: "detailCellId", for: indexPath)
+        cell.textLabel?.text = viewModel.posts?[indexPath.row].title
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let user = viewModel.userArray?[indexPath.row] else { return }
-        viewModel.didSelect(user: user)
     }
 }
 
-extension MainUserListViewController: MainUserListDelegate {
-    
-    func reloadTableView() {
+extension DetailUserViewController: DetailUserDelegate {
+    func refreshView() {
         tableView.reloadData()
     }
 }
-
