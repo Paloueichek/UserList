@@ -45,7 +45,7 @@ class MainUserListViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
-        navigationController?.title = "Profiles"
+        self.title = "Profiles"
         navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0, green: 0.9137254902, blue: 0.7019607843, alpha: 1)
     }
 }
@@ -64,7 +64,7 @@ extension MainUserListViewController: UITableViewDataSource, UITableViewDelegate
         cell.emailLabel.text = viewModel.userArray?[indexPath.row].email
         cell.phoneLabel.text = viewModel.userArray?[indexPath.row].phone
         cell.initialize()
-       
+        cell.selectionStyle = .none
         return cell
     }
     

@@ -8,11 +8,10 @@
 
 import UIKit
 
-class DetailUserTableViewCell: UITableViewCell {
+class PostsDetailTableViewCell: UITableViewCell {
     var titleLabel = UILabel()
     var descriptionLabel = UILabel()
 
-    
     lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [titleLabel,descriptionLabel])
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -41,6 +40,8 @@ class DetailUserTableViewCell: UITableViewCell {
             stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
             ])
         self.titleLabel.font = .boldSystemFont(ofSize: 15)
+        self.titleLabel.numberOfLines = 0
+        self.titleLabel.sizeToFit()
         self.descriptionLabel.font = .systemFont(ofSize: 12, weight: .light)
     }
     
@@ -50,5 +51,4 @@ class DetailUserTableViewCell: UITableViewCell {
         self.titleLabel.text = nil
         self.descriptionLabel.text = nil
     }
-
 }

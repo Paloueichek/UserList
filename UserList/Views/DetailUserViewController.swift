@@ -40,14 +40,18 @@ class DetailUserViewController: UIViewController {
         tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        tableView.register(DetailUserTableViewCell.self, forCellReuseIdentifier: "detailCellId")
+        tableView.register(PostsDetailTableViewCell.self, forCellReuseIdentifier: "detailCellId")
+        tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         let headerView = HeaderUIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 400), user: viewModel.user)
         tableView.tableHeaderView = headerView
-        tableView.register(UserDetailCell.self, forCellReuseIdentifier: "userdetailcellid")
+        tableView.register(UserDetailInfoCell.self, forCellReuseIdentifier: "userdetailcellid")
     }
     
     private func setupNavigationBar() {
         navigationController?.navigationBar.barTintColor = .clear
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.view.backgroundColor = .clear
+        
     }
 }
 
@@ -58,21 +62,20 @@ extension DetailUserViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         if indexPath.row == 0 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "userdetailcellid", for: indexPath) as? UserDetailCell else {
-                fatalError()
-            }
-            
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "userdetailcellid", for: indexPath) as? UserDetailInfoCell else { fatalError() }
             cell.initialize()
             cell.addressLabel.text = viewModel.user.address.city
             cell.companyLabel.text = viewModel.user.company.name
             cell.websiteLabel.text = viewModel.user.website
-            
+            cell.selectionStyle = .none
             return cell
         } else {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "detailCellId", for: indexPath) as? DetailUserTableViewCell else { fatalError() }
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "detailCellId", for: indexPath) as? PostsDetailTableViewCell else { fatalError() }
             cell.titleLabel.text = viewModel.posts?[indexPath.row].title
             cell.descriptionLabel.text = viewModel.posts?[indexPath.row].body
+            cell.selectionStyle = .none
             return cell
         }
     }

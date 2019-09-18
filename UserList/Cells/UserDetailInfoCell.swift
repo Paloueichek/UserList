@@ -8,13 +8,23 @@
 
 import UIKit
 
-class UserDetailCell: UITableViewCell {
+class UserDetailInfoCell: UITableViewCell {
+    var addressTitleLabel = UILabel()
     var addressLabel = UILabel()
+    
+    var companyTitleLabel = UILabel()
     var companyLabel = UILabel()
+    
+    var websiteTitleLabel = UILabel()
     var websiteLabel = UILabel()
     
     lazy var stackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [addressLabel,companyLabel,websiteLabel])
+        let stackView = UIStackView(arrangedSubviews: [addressTitleLabel,
+                                                       addressLabel,
+                                                       companyTitleLabel,
+                                                       companyLabel,
+                                                       websiteTitleLabel,
+                                                       websiteLabel])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
@@ -40,6 +50,16 @@ class UserDetailCell: UITableViewCell {
             stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
             ])
+        
+        self.addressTitleLabel.text = "Adres"
+        self.addressTitleLabel.font = .boldSystemFont(ofSize: 14)
+        
+        self.companyTitleLabel.text = "Firma"
+        self.companyTitleLabel.font = .boldSystemFont(ofSize: 14)
+        
+        self.websiteTitleLabel.text = "Strona"
+        self.websiteTitleLabel.font = .boldSystemFont(ofSize: 14)
+        
         self.addressLabel.font = .systemFont(ofSize: 14, weight: .light)
         self.companyLabel.font = .systemFont(ofSize: 14, weight: .light)
         self.websiteLabel.font = .systemFont(ofSize: 14, weight: .light)
