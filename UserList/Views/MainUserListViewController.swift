@@ -41,7 +41,6 @@ class MainUserListViewController: UIViewController {
         tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        
         tableView.register(MainUserTableViewCell.self, forCellReuseIdentifier: "cellId")
     }
     
@@ -58,10 +57,14 @@ extension MainUserListViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! MainUserTableViewCell
+        tableView.estimatedRowHeight = 80
+        cell.nameLabel.text = viewModel.userArray?[indexPath.row].name
+        cell.emailLabel.text = viewModel.userArray?[indexPath.row].email
+        cell.phoneLabel.text = viewModel.userArray?[indexPath.row].phone
+        cell.initialize()
        
-        cell.textLabel?.text = viewModel.userArray?[indexPath.row].name
-        cell.detailTextLabel?.text = viewModel.userArray?[indexPath.row].email
         return cell
     }
     

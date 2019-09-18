@@ -47,7 +47,6 @@ final class NetworkManagerImp: NetworkManager {
     func getPosts(for user: User,completion: @escaping(Result<Posts, Error>) -> Void) {
         
         let urlString = "https://jsonplaceholder.typicode.com/posts?userId=\(user.id)"
-        print("\(user.id)")
         guard let url = URL(string: urlString) else { return }
               let request = URLRequest(url: url)
         fetch(request: request, completion: completion)

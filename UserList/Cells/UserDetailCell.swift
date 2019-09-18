@@ -1,24 +1,24 @@
 //
-//  DetailUserTableViewCell.swift
+//  UserDetailCell.swift
 //  UserList
 //
-//  Created by Patrick Aloueichek on 9/17/19.
+//  Created by Patrick Aloueichek on 9/18/19.
 //  Copyright © 2019 Patrick Aloueichek. All rights reserved.
 //
 
 import UIKit
 
-class DetailUserTableViewCell: UITableViewCell {
-    var titleLabel = UILabel()
-    var descriptionLabel = UILabel()
-
+class UserDetailCell: UITableViewCell {
+    var addressLabel = UILabel()
+    var companyLabel = UILabel()
+    var websiteLabel = UILabel()
     
     lazy var stackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [titleLabel,descriptionLabel])
+        let stackView = UIStackView(arrangedSubviews: [addressLabel,companyLabel,websiteLabel])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
-        stackView.spacing = 2
+        stackView.spacing = 5
         return stackView
     }()
     
@@ -35,20 +35,23 @@ class DetailUserTableViewCell: UITableViewCell {
         self.addSubview(stackView)
         
         NSLayoutConstraint.activate([
-            stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 60),
+            stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 25),
             stackView.topAnchor.constraint(equalTo: self.topAnchor),
             stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
             ])
-        self.titleLabel.font = .boldSystemFont(ofSize: 15)
-        self.descriptionLabel.font = .systemFont(ofSize: 12, weight: .light)
+        self.addressLabel.font = .systemFont(ofSize: 14, weight: .light)
+        self.companyLabel.font = .systemFont(ofSize: 14, weight: .light)
+        self.websiteLabel.font = .systemFont(ofSize: 14, weight: .light)
+        
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
         
-        self.titleLabel.text = nil
-        self.descriptionLabel.text = nil
+        self.addressLabel.text = nil
+        self.companyLabel.text = nil
+        self.websiteLabel.text = nil
     }
-
 }
+

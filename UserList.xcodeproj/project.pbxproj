@@ -23,6 +23,7 @@
 		7ACB185A233167C100E6EF96 /* DetailUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACB1859233167C100E6EF96 /* DetailUserViewController.swift */; };
 		7ACB185D233173BC00E6EF96 /* DetailUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACB185C233173BC00E6EF96 /* DetailUserTableViewCell.swift */; };
 		7ACB185F23317BE900E6EF96 /* HeaderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACB185E23317BE900E6EF96 /* HeaderUIView.swift */; };
+		7ACB187F233271EB00E6EF96 /* UserDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACB187E233271EB00E6EF96 /* UserDetailCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		7ACB1859233167C100E6EF96 /* DetailUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailUserViewController.swift; sourceTree = "<group>"; };
 		7ACB185C233173BC00E6EF96 /* DetailUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailUserTableViewCell.swift; sourceTree = "<group>"; };
 		7ACB185E23317BE900E6EF96 /* HeaderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderUIView.swift; sourceTree = "<group>"; };
+		7ACB187E233271EB00E6EF96 /* UserDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 			children = (
 				7ACB18502331151B00E6EF96 /* MainUserTableViewCell.swift */,
 				7ACB185C233173BC00E6EF96 /* DetailUserTableViewCell.swift */,
+				7ACB187E233271EB00E6EF96 /* UserDetailCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				7A63FFCA232FBF7C00B3FDAA /* Coordinator.swift in Sources */,
 				7ACB184E2330E54D00E6EF96 /* NetworkManager.swift in Sources */,
 				7ACB185623311C3300E6EF96 /* Posts.swift in Sources */,
+				7ACB187F233271EB00E6EF96 /* UserDetailCell.swift in Sources */,
 				7ACB185D233173BC00E6EF96 /* DetailUserTableViewCell.swift in Sources */,
 				7ACB184B2330E4A300E6EF96 /* MainUserListViewModel.swift in Sources */,
 				7ACB18582331674D00E6EF96 /* DetailUserViewModel.swift in Sources */,
