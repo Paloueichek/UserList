@@ -31,7 +31,7 @@ class HeaderUIView: UIView {
         
         stackView.distribution = .fillEqually
         stackView.axis = .vertical
-        stackView.spacing = 5
+        stackView.spacing = 3
         
         nameLabel.text = user.name
         emailLabel.text = user.email
@@ -55,8 +55,9 @@ class HeaderUIView: UIView {
         stackView.addSubview(view)
         NSLayoutConstraint.activate([
             stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 25),
-            stackView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            stackView.widthAnchor.constraint(equalToConstant: 200),
+            stackView.heightAnchor.constraint(equalToConstant: 100)
             ])
     }
 
