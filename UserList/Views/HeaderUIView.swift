@@ -71,7 +71,6 @@ class HeaderUIView: UIView {
         NSLayoutConstraint.activate([
             self.stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 25),
             self.stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            self.stackView.widthAnchor.constraint(equalToConstant: 200),
             self.stackView.heightAnchor.constraint(equalToConstant: 100)
             ])
     }
