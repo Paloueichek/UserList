@@ -47,11 +47,6 @@ class HeaderUIView: UIView {
         imageView.addSubview(stackView)
         self.addSubview(imageView)
         
-        imageView.topAnchor.constraint(equalTo: self.topAnchor)
-        imageView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
-        imageView.leadingAnchor.constraint(equalTo: self.leadingAnchor)
-        imageView.trailingAnchor.constraint(equalTo: self.trailingAnchor)
-        
         stackView.addSubview(view)
         NSLayoutConstraint.activate([
             stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 25),
