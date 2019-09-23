@@ -27,9 +27,14 @@ final class AppCoordinator: BaseCoordinator {
     }
     
     func openDetailScreen(with user: User) {
-       
         let viewModel = DetailUserViewModel(networkManager: networking, appCoordinator: self, user: user)
         let detailUserViewController = DetailUserViewController(viewModel: viewModel)
         rootController.pushViewController(detailUserViewController, animated: true)
+    }
+    
+    func openPostsScreen(with posts: Posts) {
+       let viewModel = PostsViewModel(networking: networking, appCoordinator: self, posts: posts)
+       let postsViewController = PostsViewController(viewModel: viewModel)
+        rootController.pushViewController(postsViewController, animated: true)
     }
 }

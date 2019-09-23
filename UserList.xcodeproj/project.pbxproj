@@ -13,6 +13,8 @@
 		7A63FFCC232FBF9C00B3FDAA /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A63FFCB232FBF9C00B3FDAA /* BaseCoordinator.swift */; };
 		7A63FFCE23300EC900B3FDAA /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A63FFCD23300EC900B3FDAA /* AppCoordinator.swift */; };
 		7A63FFD12330118800B3FDAA /* MainUserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A63FFD02330118800B3FDAA /* MainUserListViewController.swift */; };
+		7A7E24212338DD0E0089B971 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7E24202338DD0E0089B971 /* PostsViewController.swift */; };
+		7A7E24232338DD340089B971 /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7E24222338DD340089B971 /* PostsViewModel.swift */; };
 		7AC003BA2334DF4C001B5BD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AC003B82334DF4C001B5BD8 /* LaunchScreen.storyboard */; };
 		7ACB184B2330E4A300E6EF96 /* MainUserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACB184A2330E4A300E6EF96 /* MainUserListViewModel.swift */; };
 		7ACB184E2330E54D00E6EF96 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACB184D2330E54D00E6EF96 /* NetworkManager.swift */; };
@@ -35,6 +37,8 @@
 		7A63FFCB232FBF9C00B3FDAA /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		7A63FFCD23300EC900B3FDAA /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		7A63FFD02330118800B3FDAA /* MainUserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUserListViewController.swift; sourceTree = "<group>"; };
+		7A7E24202338DD0E0089B971 /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
+		7A7E24222338DD340089B971 /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
 		7AC003B92334DF4C001B5BD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7ACB184A2330E4A300E6EF96 /* MainUserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUserListViewModel.swift; sourceTree = "<group>"; };
 		7ACB184D2330E54D00E6EF96 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -108,6 +112,7 @@
 				7A63FFD02330118800B3FDAA /* MainUserListViewController.swift */,
 				7ACB1859233167C100E6EF96 /* DetailUserViewController.swift */,
 				7ACB185E23317BE900E6EF96 /* HeaderUIView.swift */,
+				7A7E24202338DD0E0089B971 /* PostsViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -117,6 +122,7 @@
 			children = (
 				7ACB184A2330E4A300E6EF96 /* MainUserListViewModel.swift */,
 				7ACB18572331674D00E6EF96 /* DetailUserViewModel.swift */,
+				7A7E24222338DD340089B971 /* PostsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -218,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A7E24232338DD340089B971 /* PostsViewModel.swift in Sources */,
 				7A63FFB7232FBF4700B3FDAA /* AppDelegate.swift in Sources */,
 				7A63FFCE23300EC900B3FDAA /* AppCoordinator.swift in Sources */,
 				7ACB185423311BE100E6EF96 /* Users.swift in Sources */,
@@ -230,6 +237,7 @@
 				7ACB18582331674D00E6EF96 /* DetailUserViewModel.swift in Sources */,
 				7A63FFD12330118800B3FDAA /* MainUserListViewController.swift in Sources */,
 				7A63FFCC232FBF9C00B3FDAA /* BaseCoordinator.swift in Sources */,
+				7A7E24212338DD0E0089B971 /* PostsViewController.swift in Sources */,
 				7ACB185F23317BE900E6EF96 /* HeaderUIView.swift in Sources */,
 				7ACB185A233167C100E6EF96 /* DetailUserViewController.swift in Sources */,
 				7ACB18512331151B00E6EF96 /* MainUserTableViewCell.swift in Sources */,

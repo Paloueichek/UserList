@@ -39,4 +39,10 @@ final class DetailUserViewModel {
             }
         }
     }
+    
+    func didSelect(post: Posts) {
+        guard let posts = posts else { return }
+          appCoordinator?.openPostsScreen(with: posts)
+      }
+      
 }

@@ -62,7 +62,6 @@ extension DetailUserViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         if indexPath.row == 0 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "userdetailcellid", for: indexPath) as? UserDetailInfoCell else { fatalError() }
             cell.initialize()
@@ -80,6 +79,11 @@ extension DetailUserViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let posts = viewModel.posts else { return }
+        viewModel.didSelect(post: posts)
+       
+    }
 }
 
 extension DetailUserViewController: DetailUserDelegate {
